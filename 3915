@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription - Électronix Formation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1, h2, p {
+            color: #f4f4f9;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #3e3e3e;
+            color: #f4f4f9;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #confirmation {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="signup">
+        <h1>zentronix formation</h1>
+        <h2>  Inscrivez-vous Maintenant pour Bénéficier de Notre Formation en Hacking Éthique !  </h2>
+        <form id="signupForm">
+            <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="email" id="email" name="email" placeholder="Adresse e-mail" required>
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+
+    <div class="container" id="confirmation">
+        <h1>Inscription réussie !</h1>
+        <p>Votre compte a été créé avec succès:      
+Tarif de la formation enligne : 15 000 francs par mois
+            <h1>Mais attendez !Vous pouvez l'obtenir  gratuitement</h1>
+
+Comment ?  
+Il vous suffit de partager le lien de notre formation dans 20 groupes.
+
+Profitez de cette opportunité pour apprendre les secrets du hacking éthique.
+
+- Maîtrisez les techniques de sécurité.
+- Protégez vos données et celles des autres.
+- Rejoignez une communauté d'experts. :</p>
+        <a href="https://chat.whatsapp.com/Fq0LwX9Oxpb5V5qKWabCYc" target="_blank">Rejoindre le groupe WhatsApp</a>
+        <br><br>
+        <button id="shareButton">Partager</button>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Masquer le formulaire et afficher la confirmation
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('confirmation').style.display = 'block';
+        });
+
+        document.getElementById('shareButton').addEventListener('click', function() {
+            const message = encodeURIComponent("Rejoignez-moi sur Électronix Formation : https://chat.whatsapp.com/Fq0LwX9Oxpb5V5qKWabCYc");
+            window.location.href = `whatsapp://send?text=${message}`;
+        });
+    </script>
+</body>
+</html>
